@@ -44,9 +44,12 @@ async function run() {
 
     //****************************************************************
 
-    const cursor4 = movies.find(
-      { Rating: { $gte: 9 } }
-    );
+    const query = { Rating: { $gte: 9 } };
+    const options = {
+      projection: {Title: 1, Rating: 1 },
+    };
+
+    const cursor4 = movies.find(query, options);
 
     console.log("\nMovie List 9+ Rating:");
     check(cursor4);

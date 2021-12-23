@@ -70,7 +70,7 @@ async function run() {
     //****************************************************************
 
     let cursor6 = movies.find(
-      { Rating: { $gte: 0, $lte: 10 } },
+      { Rating: { $lte: 10 } },
       { sort: { Rating: -1 } }
     ).limit(3);
 
